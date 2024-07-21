@@ -10,17 +10,17 @@ import React from 'react'
 
 const Home = async () => {
   const clerkUser = await currentUser();
-  if(!clerkUser) redirect('sign-in')
+  if (!clerkUser) redirect('sign-in')
 
   const documents = [];
   return (
-    <div>
-      <Button>Click Me</Button>
+    <main className="home-container">
+      {/* <Button>Click Me</Button> */}
       <Header className='sticky left-0 top-0'>
         <div className='flex items-center gap-2 lg:gap-4'>
           Notification
           <SignedIn>
-            <UserButton/>
+            <UserButton />
           </SignedIn>
         </div>
       </Header>
@@ -56,9 +56,9 @@ const Home = async () => {
             ))}
           </ul> */}
         </div>
-      ): (
+      ) : (
         <div className="document-list-empty">
-          <Image 
+          <Image
             src="/assets/icons/doc.svg"
             alt="Document"
             width={40}
@@ -74,7 +74,7 @@ const Home = async () => {
       )}
 
 
-    </div>
+    </main>
   )
 }
 
